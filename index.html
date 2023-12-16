@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head><script type="text/javascript" src="/___vscode_livepreview_injected_script"></script>
@@ -10,18 +9,18 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #C5FFF8;
+            background-color: rgba(197, 217, 255, 0.765);
             text-align: center; 
         }
 
         header {
-            background-color: #5FBDFF;
+            background-color: rgba(95, 189, 255, 0.8);
             color: rgb(11, 14, 14);
             padding: 1em;
         }
 
         nav {
-            background-color: #afe81fd6;
+            background-color: rgba(175, 232, 253, 0.8);
             padding: 1em;
         }
 
@@ -30,19 +29,30 @@
             text-decoration: none;
             color: #240628;
             display: inline-block;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #072251;
         }
 
         section {
             text-align: center; 
             margin: 0; 
-            padding: 1em; 
+            padding: 2em; 
+            background-size: cover;
+            background-position: center;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            margin-top: 20px;
         }
 
         section .image-container {
             position: relative;
-            width: 60%;
+            width: 80%;
             margin: 0 auto; 
-            padding-top: 50%; 
+            padding-top: 40%; /* Decreased padding-top */
         }
 
         section img {
@@ -54,23 +64,74 @@
             left: 0;
             width: 100%;
             height: 100%;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
         }
 
+        section:hover img {
+            transform: scale(1.1);
+        }
+
+        #patients {
+            background-image: url('./1.jpeg');
+        }
+
+        #diagnosis {
+            background-image: url('./WhatsApp\ Image\ 2023-12-17\ at\ 02.07.35.jpeg');
+        }
+
+        #chatbot {
+            background-image: url('./WhatsApp\ Image\ 2023-12-17\ at\ 02.07.35\ \(1\).jpeg');
+        }
+
+        #appointments {
+            background-image: url('./WhatsApp\ Image\ 2023-12-17\ at\ 02.07.35.jpeg');
+        }
+
+        #reminders {
+            background-image: url('./WhatsApp\ Image\ 2023-12-17\ at\ 02.07.35\ \(1\).jpeg');
+        }
+
+        #insurance {
+            background-image: url('./WhatsApp\ Image\ 2023-12-17\ at\ 02.07.36\ \(1\).jpeg');
+        }
+
+        section {
+    text-align: center;
+    margin: 0;
+    padding: 2em;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    border-radius: 10px;
+    margin-top: 20px;
+    position: relative;
+}
+
+section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust the alpha value for transparency */
+    border-radius: 10px;
+}
         footer {
-            background-color: #333;
+            background-color: rgba(51, 51, 51, 0.8);
             color: white;
             padding: 1em;
-            bottom: 0;
-            width: 100%;
         }
+
         #notificationDropdown {
             display: none;
             position: absolute;
             background-color: hwb(145 5% 6% / 0.683);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
             z-index: 1;
-            top: 50px; /* Adjust the distance from the button */
-            right: 10px; /* Adjust the distance from the button */
+            top: 50px;
+            right: 10px;
         }
 
         #notificationDropdown a {
@@ -78,44 +139,256 @@
             padding: 12px 16px;
             text-decoration: none;
             display: block;
+            transition: background-color 0.3s ease;
         }
 
         #notificationDropdown a:hover {
             background-color: #ddd;
         }
 
-        /* Style for the notification button */
         #notificationBtn {
             cursor: pointer;
             position: relative;
             padding: 10px;
-            background-color: #afe81fd6;
+            background-color: rgba(175, 232, 253, 0.8);
             color: rgb(11, 14, 14);
-        }
-        /* Add the following styles to your existing CSS */
-
-        /* Style for the notification button */
-        #notificationBtn {
-        cursor: pointer;
-        position: relative;
-        padding: 10px;
-        background-color: #afe81fd6;
-        color: rgb(11, 14, 14);
-        display: inline-block; /* Align the button horizontally */
+            transition: background-color 0.3s ease, color 0.3s ease;
+            display: inline-block; /* Align the button horizontally */
         }
 
-/* Adjust the position of the dropdown */
-#notificationDropdown {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    top: 40px; /* Adjust the distance from the button */
-    right: 10px; /* Adjust the distance from the button */
-    width: 200px; /* Adjust the width of the dropdown if needed */
+        #notificationBtn:hover {
+            background-color: #072251;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            section .image-container {
+                width: 100%;
+            }
+
+            #notificationDropdown {
+                top: 40px;
+                right: 0;
+                width: 100%;
+            }
+        }
+        section .image-container {
+    position: relative;
+    width: 40%; /* Updated width to half of the original */
+    margin: 0 auto;
+    padding-top: 20%; /* Updated padding-top accordingly */
 }
 
+section img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Updated to contain */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #72d50fa9;
+    text-align: center; 
+    color: hsl(58, 83%, 38%); /* Light color for better visibility on dark background */
+}
+h2{
+    font-size: xx-large;
+    font-weight: bolder;
+    color: rgba(218, 250, 8, 0.799);
+}
+p{
+    font-size: xx-large;
+    font-weight: bolder;
+    color: black;
+}
+/* ... (rest of your CSS remains unchanged) */
+#patients {
+    background-image: url('./1.jpeg');
+    position: relative;
+}
+
+#patients .image-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('./1.jpeg'); /* Same as the background image */
+    filter: blur(100000px); /* Adjust the blur amount */
+    z-index: -1;
+}
+
+#patients h2,
+#patients p {
+    position: relative;
+    z-index: 1;
+}
+
+#diagnosis {
+    background-image: url('./WhatsApp\ Image\ 2023-12-17\ at\ 02.07.35.jpeg');
+    position: relative;
+}
+
+#diagnosis .image-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('./WhatsApp\ Image\ 2023-12-17\ at\ 02.07.35.jpeg');
+    filter: blur(100000px); /* Adjust the blur amount */
+    z-index: -1;
+}
+
+#diagnosis h2,
+#diagnosis p {
+    position: relative;
+    z-index: 1;
+}
+#chatbot {
+    background-image: url('./WhatsApp\ Image\ 2023-12-17\ at\ 02.07.35\ \(1\).jpeg');
+    position: relative;
+}
+
+#chatbot .image-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('./WhatsApp\ Image\ 2023-12-17\ at\ 02.07.35\ \(1\).jpeg');
+    filter: blur(100000px); /* Adjust the blur amount */
+    z-index: -1;
+}
+
+#chatbot h2,
+#chatbot p {
+    position: relative;
+    z-index: 1;
+}
+#appointments {
+    background-image: url('./WhatsApp\ Image\ 2023-12-17\ at\ 02.07.36.jpeg');
+    position: relative;
+}
+
+#appointments .image-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('./WhatsApp\ Image\ 2023-12-17\ at\ 02.07.36.jpeg');
+    filter: blur(100000px); /* Adjust the blur amount */
+    z-index: -1;
+}
+
+#appointments h2,
+#appointments p {
+    position: relative;
+    z-index: 1;
+}
+#reminders {
+    background-image: url('./WhatsApp\ Image\ 2023-12-17\ at\ 02.07.36\ \(1\).jpeg');
+    position: relative;
+}
+
+#reminders .image-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('./WhatsApp\ Image\ 2023-12-17\ at\ 02.07.36\ \(1\).jpeg');
+    filter: blur(100000px); /* Adjust the blur amount */
+    z-index: -1;
+}
+
+#reminders h2,
+#reminders p {
+    position: relative;
+    z-index: 1;
+}
+#insurance {
+    background-image: url('./1.jpeg');
+    position: relative;
+}
+
+#insurance .image-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('./WhatsApp\ Image\ 2023-12-17\ at\ 02.07.35.jpeg');
+    filter: blur(100000px); /* Adjust the blur amount */
+    z-index: -1;
+}
+
+#insurance h2,
+#insurance p {
+    position: relative;
+    z-index: 1;
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgba(197, 217, 255, 0.765);
+    text-align: center;
+}
+
+header {
+    background-color: rgba(95, 189, 255, 0.8);
+    color: rgb(11, 14, 14);
+    padding: 0.5em;
+    font-size: 1.5em; /* Adjust the font size */
+}
+
+h1 {
+    margin: 0;
+    font-size: 1.5em; /* Adjust the font size */
+}
+
+p {
+    font-size: large; /* Adjust the font size */
+    color: black; /* Change the text color for better visibility */
+}
+
+/* ... (rest of your CSS remains unchanged) */
+
+#patients h2,
+#diagnosis h2,
+#chatbot h2,
+#appointments h2,
+#reminders h2,
+#insurance h2,
+#patients p,
+#diagnosis p,
+#chatbot p,
+#appointments p,
+#reminders p,
+#insurance p {
+    position: relative;
+    z-index: 1;
+    color: rgb(204, 233, 14); /* Change the text color for better visibility */
+}
+footer{
+    background-color: aqua;
+}
     </style>
 </head>
 <body>
@@ -129,63 +402,59 @@
         <a href="./diag.html">Diagnosis</a>
         <a href="#chatbot">Chatbot</a>
         <a href="./appo.html">Appointments</a>
-        <!-- Replace the href value with "#" to prevent the page from reloading -->
-        <div id="notificationBtn">Notifications</div>
-        <!-- Add a container for the notification dropdown -->
+        <div id="notificationBtn">Reminders</div>
         <div id="notificationDropdown">
-            <!-- Add dynamic content for notifications here -->
             <a href="#">Medicine Due: Aspirin on DD/MM/YYYY</a>
             <a href="#">Appointment: Dr. Smith on DD/MM/YYYY</a>
-            <!-- Add more notifications as needed -->
         </div>
         <a href="#insurance">Insurance</a>
     </nav>
 
     <section id="patients">
-        <h2>Patients Onboarding</h2>
         <div class="image-container">
             <img src="placeholder1_image.jpeg" alt="Patients Onboarding Image">
         </div>
+        <h2>Patients Onboarding</h2>
         <p>Efficiently manage the onboarding process for new patients, including personal information and medical history.</p>
     </section>
 
     <section id="diagnosis">
-        <h2>Diagnosis or Lab Tests Reports Status Dashboard</h2>
         <div class="image-container">
             <img src="placeholder2_image.jpeg" alt="Diagnosis Dashboard Image">
         </div>
+        <h2>Diagnosis or Lab Tests Reports Status Dashboard</h2>
         <p>Track and monitor the status of diagnosis and lab test reports through a centralized dashboard.</p>
     </section>
 
     <section id="chatbot">
-        <h2>Queries Chatbot</h2>
         <div class="image-container">
             <img src="placeholder3_image.jpg" alt="Chatbot Image">
         </div>
+        <h2>Queries Chatbot</h2>
         <p>Utilize a chatbot to address queries and provide information to patients, improving communication and engagement.</p>
     </section>
 
     <section id="appointments">
-        <h2>Appointment Booking</h2>
         <div class="image-container">
             <img src="placeholder4_image.jpg" alt="Appointment Booking Image">
         </div>
+        <h2>Appointment Booking</h2>
         <p>Effortlessly schedule and manage appointments for patients, ensuring a streamlined and organized process.</p>
     </section>
 
     <section id="reminders">
-        <h2>Reminders</h2>
         <div class="image-container">
             <img src="placeholder5_image.jpg" alt="Reminders Image">
         </div>
+        <h2>Reminders</h2>
         <p>Set up reminders for both patients and staff to enhance adherence to appointments, medications, and other important events.</p>
     </section>
 
     <section id="insurance">
-        <h2>Insurances Suggestions</h2>
         <div class="image-container">
             <img src="placeholder6_image.jpg" alt="Insurance Suggestions Image">
         </div>
+        <h2>Insurances Suggestions</h2>
         <p>Provide intelligent suggestions regarding insurance options for patients, ensuring coverage for medical expenses.</p>
     </section>
 
@@ -194,16 +463,13 @@
     </footer>
 
     <script>
-        // Get the notification button and dropdown
         var notificationBtn = document.getElementById('notificationBtn');
         var notificationDropdown = document.getElementById('notificationDropdown');
 
-        // Toggle visibility of the notification dropdown
         notificationBtn.addEventListener('click', function() {
             notificationDropdown.style.display = (notificationDropdown.style.display === 'block') ? 'none' : 'block';
         });
 
-        // Close the notification dropdown if the user clicks outside of it
         window.onclick = function(event) {
             if (event.target !== notificationBtn && event.target !== notificationDropdown && !notificationDropdown.contains(event.target)) {
                 notificationDropdown.style.display = 'none';
