@@ -389,6 +389,58 @@ p {
 footer{
     background-color: aqua;
 }
+section .image-container {
+    position: relative;
+    width: 40%; /* Updated width to half of the original */
+    margin: 0 auto;
+    padding-top: 20%; /* Updated padding-top accordingly */
+    border-radius: 10px; /* Added border-radius for smooth corners */
+}
+
+section img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Updated to contain */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px; /* Added border-radius for smooth corners */
+    transition: transform 0.3s ease;
+}
+#patients .image-container,
+#diagnosis .image-container,
+#chatbot .image-container,
+#appointments .image-container,
+#reminders .image-container,
+#insurance .image-container {
+    position: relative;
+    width: 40%;
+    margin: 0 auto;
+    padding-top: 20%;
+    overflow: hidden; /* Added overflow property */
+    border-radius: 10px; /* Added border-radius for smooth corners */
+}
+
+#patients img,
+#diagnosis img,
+#chatbot img,
+#appointments img,
+#reminders img,
+#insurance img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px; /* Added border-radius for smooth corners */
+    transition: transform 0.3s ease;
+}
+
     </style>
 </head>
 <body>
