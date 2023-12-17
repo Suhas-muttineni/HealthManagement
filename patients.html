@@ -5,17 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hospital Management System - Patients</title>
     <style>
-        /* Styles remain the same as in your previous code */
-
-        /* Add some additional styling for the form */
-
-        
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #C5FFF8;
-            text-align: center; /* Center align the text content */
+            text-align: center; 
         }
 
         header {
@@ -37,9 +32,9 @@
         }
 
         section {
-            text-align: center; /* Center align text content within sections */
-            margin: 0; /* Remove default margin */
-            padding: 1em; /* Add padding to provide spacing around content */
+            text-align: center; 
+            margin: 0; 
+            padding: 1em; 
         }
 
         section .patient-details {
@@ -93,8 +88,8 @@
             background-color: hwb(145 5% 6% / 0.683);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
             z-index: 1;
-            top: 50px; /* Adjust the distance from the button */
-            right: 10px; /* Adjust the distance from the button */
+            top: 50px; 
+            right: 10px; 
         }
 
         #notificationDropdown a {
@@ -108,7 +103,7 @@
             background-color: #ddd;
         }
 
-        /* Style for the notification button */
+      
         #notificationBtn {
             cursor: pointer;
             position: relative;
@@ -116,28 +111,23 @@
             background-color: #afe81fd6;
             color: rgb(11, 14, 14);
         }
-        /* Add the following styles to your existing CSS */
-
-        /* Style for the notification button */
         #notificationBtn {
         cursor: pointer;
         position: relative;
         padding: 10px;
         background-color: #afe81fd6;
         color: rgb(11, 14, 14);
-        display: inline-block; /* Align the button horizontally */
+        display: inline-block; 
         }
-
-/* Adjust the position of the dropdown */
 #notificationDropdown {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     z-index: 1;
-    top: 40px; /* Adjust the distance from the button */
-    right: 10px; /* Adjust the distance from the button */
-    width: 200px; /* Adjust the width of the dropdown if needed */
+    top: 40px; 
+    right: 10px; 
+    width: 200px; 
 }
     </style>
 </head>
@@ -153,24 +143,18 @@
         <a href="./diag.html">Diagnosis</a>
         <a href="./Chatbot.html">Chatbot</a>
         <a href="./appo.html">Appointments</a>
-        <!-- Replace the href value with "#" to prevent the page from reloading -->
+       
         <div id="notificationBtn">Remainders</div>
-        <!-- Add a container for the notification dropdown -->
         <div id="notificationDropdown">
-            <!-- Add dynamic content for notifications here -->
             <a href="#">Medicine Due: Aspirin on DD/MM/YYYY</a>
             <a href="#">Appointment: Dr. Smith on DD/MM/YYYY</a>
-            <!-- Add more notifications as needed -->
         </div>
-        <a href="#insurance">Insurance</a>
+        <a href="./ins.html">Insurance</a>
     </nav>
     <section id="patients">
         <h2>Patients Onboarding</h2>
         <div class="patient-details" id="patientDetails">
-            <!-- Patient details will be added dynamically using JavaScript -->
         </div>
-
-        <!-- Registration Form -->
         <form id="registrationForm">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
@@ -216,9 +200,7 @@
     </footer>
 
     <script>
-        // Function to add patient details dynamically
         function addPatientDetails() {
-            // Sample patient details (replace with actual data)
             var patientDetails = {
                 name: "John Doe",
                 age: 30,
@@ -229,10 +211,8 @@
                 allergies: "None",
             };
 
-            // Get the patientDetails container
             var patientDetailsContainer = document.getElementById("patientDetails");
 
-            // Create elements to display patient details
             var detailsParagraph = document.createElement("p");
             detailsParagraph.innerHTML = `<strong>Name:</strong> ${patientDetails.name}<br>
                                           <strong>Age:</strong> ${patientDetails.age}<br>
@@ -246,7 +226,6 @@
             patientDetailsContainer.appendChild(detailsParagraph);
         }
 
-        // Function to register a new patient
         function registerPatient() {
             var name = document.getElementById("name").value;
             var age = document.getElementById("age").value;
@@ -256,9 +235,7 @@
             var preferences = document.getElementById("preferences").value;
             var allergies = document.getElementById("allergies").value;
 
-            // You can perform further actions here, such as sending data to the server, storing in a database, etc.
 
-            // For now, let's just display the registered patient details dynamically
             var registrationDetails = {
                 name: name,
                 age: age,
@@ -269,7 +246,6 @@
                 allergies: allergies,
             };
 
-            // Display the registered patient details
             var patientDetailsContainer = document.getElementById("patientDetails");
             var detailsParagraph = document.createElement("p");
             detailsParagraph.innerHTML = `<strong>Name:</strong> ${registrationDetails.name}<br>
@@ -280,21 +256,17 @@
                                           <strong>Patient Preferences:</strong> ${registrationDetails.preferences}<br>
                                           <strong>Allergies:</strong> ${registrationDetails.allergies}`;
 
-            // Append details to the container
             patientDetailsContainer.appendChild(detailsParagraph);
         }
     </script>
      <script>
-        // Get the notification button and dropdown
         var notificationBtn = document.getElementById('notificationBtn');
         var notificationDropdown = document.getElementById('notificationDropdown');
 
-        // Toggle visibility of the notification dropdown
         notificationBtn.addEventListener('click', function() {
             notificationDropdown.style.display = (notificationDropdown.style.display === 'block') ? 'none' : 'block';
         });
 
-        // Close the notification dropdown if the user clicks outside of it
         window.onclick = function(event) {
             if (event.target !== notificationBtn && event.target !== notificationDropdown && !notificationDropdown.contains(event.target)) {
                 notificationDropdown.style.display = 'none';
