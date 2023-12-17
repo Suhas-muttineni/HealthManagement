@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hospital Management System</title>
     <style>
-        /* Your existing styles remain unchanged */
-        /* ... */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -36,7 +34,6 @@
 
         footer {
             background-color: #333;
-
             color: white;
             padding: 1em;
             bottom: 0;
@@ -49,8 +46,8 @@
             background-color: hwb(145 5% 6% / 0.683);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
             z-index: 1;
-            top: 50px; /* Adjust the distance from the button */
-            right: 10px; /* Adjust the distance from the button */
+            top: 50px; 
+            right: 10px; 
         }
 
         #notificationDropdown a {
@@ -70,27 +67,7 @@
             padding: 10px;
             background-color: #afe81fd6;
             color: rgb(11, 14, 14);
-            display: inline-block; /* Align the button horizontally */
-        }
-
-        #notificationBtn {
-            cursor: pointer;
-            position: relative;
-            padding: 10px;
-            background-color: #afe81fd6;
-            color: rgb(11, 14, 14);
-            display: inline-block; /* Align the button horizontally */
-        }
-
-        #notificationDropdown {
-            display: none;
-            position: absolute;
-            background-color: #f9f9f9;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            z-index: 1;
-            top: 40px; /* Adjust the distance from the button */
-            right: 10px; /* Adjust the distance from the button */
-            width: 200px; /* Adjust the width of the dropdown if needed */
+            display: inline-block; 
         }
 
         #registration {
@@ -118,15 +95,6 @@
         }
 
         #registerBtn {
-            padding: 10px;
-            font-size: 16px;
-            background-color: #3498db;
-            color: #ffffff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        #registerBtn {
             width: 100%;
             padding: 10px;
             font-size: 16px;
@@ -137,8 +105,13 @@
             cursor: pointer;
         }
 
-        #registration {
-            margin-bottom: 60px; /* Adjust the margin to leave space above the button */
+        #successMessage {
+            display: none;
+            padding: 20px;
+            background-color: #2ecc71;
+            color: #ffffff;
+            border-radius: 10px;
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -164,7 +137,7 @@
 
     <div id="registration">
         <h2>Registration Form</h2>
-        <form>
+        <form id="registrationForm">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
 
@@ -184,28 +157,26 @@
         </form>
     </div>
 
+    <div id="successMessage">
+        <p>Successfully registered on this page!</p>
+    </div>
+
     <footer>
         <p>&copy; 2023 Hospital Management System</p>
     </footer>
 
     <script>
-        // Your existing notification script remains unchanged
-        // ...
-        // Get the notification button and dropdown
-        var notificationBtn = document.getElementById('notificationBtn');
-        var notificationDropdown = document.getElementById('notificationDropdown');
+        var registrationForm = document.getElementById('registrationForm');
+        var successMessage = document.getElementById('successMessage');
 
-        // Toggle visibility of the notification dropdown
-        notificationBtn.addEventListener('click', function() {
-            notificationDropdown.style.display = (notificationDropdown.style.display === 'block') ? 'none' : 'block';
+        registrationForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting normally
+
+            // Display success message
+            successMessage.style.display = 'block';
+
+            // You can redirect to another page or perform other actions here
         });
-
-        // Close the notification dropdown if the user clicks outside of it
-        window.onclick = function(event) {
-            if (event.target !== notificationBtn && event.target !== notificationDropdown && !notificationDropdown.contains(event.target)) {
-                notificationDropdown.style.display = 'none';
-            }
-        };
     </script>
 </body>
 </html>
