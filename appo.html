@@ -177,16 +177,16 @@
         <a href="./diag.html">Diagnosis</a>
         <a href="./Chatbot.html">Chatbot</a>
         <a href="./appo.html">Appointments</a>
-        <!-- Replace the href value with "#" to prevent the page from reloading -->
+        
         <div id="notificationBtn">Remainders</div>
-        <!-- Add a container for the notification dropdown -->
+       
         <div id="notificationDropdown">
-            <!-- Add dynamic content for notifications here -->
+            
             <a href="#">Medicine Due: Aspirin on DD/MM/YYYY</a>
             <a href="#">Appointment: Dr. Smith on DD/MM/YYYY</a>
-            <!-- Add more notifications as needed -->
+           
         </div>
-        <a href="#insurance">Insurance</a>
+        <a href="./ins.html">Insurance</a>
     </nav>
 
     <section id="appointment">
@@ -194,14 +194,14 @@
             <label for="disease"><b>Disease your suffering from :</b></label>
             <select id="disease" name="disease" required>
                 <option value="select" selected disabled>Select</option>
-                <!-- Dummy data for diseases -->
+                
                 <option value="heart">Heart Disease</option>
                 <option value="diabetes">Diabetes</option>
                 <option value="flu">Influenza (Flu)</option>
                 <option value="Fever">Fever</option>
                 <option value="Migrane">Migrane</option>
                 <option value="Joint pains">Joint pains</option>
-                <!-- Add more dummy data as needed -->
+               
             </select>
 
             
@@ -211,7 +211,7 @@
         <div id="doctor-list"></div>
     </section>
 
-    <!-- Your existing sections remain unchanged -->
+    
 
     <footer>
         <p>&copy; 2023 Hospital Management System</p>
@@ -219,7 +219,7 @@
 
     <script>
         function findDoctors() {
-            // Dummy data for demonstration
+            
             const dummyData = [
                 { name: 'Dr. Smith', specialty: 'Fever', availability: 'Monday, 10:00 AM - 1:00 PM' },
                 { name: 'Dr. Johnson', specialty: 'heart', availability: 'Wednesday, 2:00 PM - 5:00 PM' },
@@ -227,16 +227,16 @@
                 { name: 'Dr. Rambabu', specialty: 'flu', availability: 'thursday, 12:00 AM - 4:00 AM' },
                 { name: 'Dr. Manoj kumar', specialty: 'Joint pains', availability: 'Wednesday, 2:00 PM - 5:00 PM' },
                 { name: 'Dr. Yashwanth', specialty: 'Migrane', availability: 'Saturday, 1:00 AM - 8:00 AM' },
-                // Add more dummy data as needed
+               
             ];
 
             const disease = document.getElementById('disease').value;
             const doctorListContainer = document.getElementById('doctor-list');
 
-            // Filter doctors based on the input disease (dummy data, replace with actual data)
+            
             const availableDoctors = dummyData.filter(doctor => doctor.specialty.toLowerCase().includes(disease.toLowerCase()));
 
-            // Display the list of available doctors
+            
             if (availableDoctors.length > 0) {
                 const ul = document.createElement('ul');
                 availableDoctors.forEach(doctor => {
@@ -262,22 +262,21 @@
             button.textContent = 'Booked';
             button.className = 'booked-button';
             button.disabled = true;
-            // Additional logic to handle the booking, e.g., send a request to the server
-            // and update the database
+            
             console.log(`Doctor ${doctorName} booked!`);
         }
     </script>
     <script>
-        // Get the notification button and dropdown
+        
         var notificationBtn = document.getElementById('notificationBtn');
         var notificationDropdown = document.getElementById('notificationDropdown');
 
-        // Toggle visibility of the notification dropdown
+       
         notificationBtn.addEventListener('click', function() {
             notificationDropdown.style.display = (notificationDropdown.style.display === 'block') ? 'none' : 'block';
         });
 
-        // Close the notification dropdown if the user clicks outside of it
+       
         window.onclick = function(event) {
             if (event.target !== notificationBtn && event.target !== notificationDropdown && !notificationDropdown.contains(event.target)) {
                 notificationDropdown.style.display = 'none';
